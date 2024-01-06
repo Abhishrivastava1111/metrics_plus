@@ -25,7 +25,6 @@ import com.taskmaster.manager.service.UserService;
 import jakarta.transaction.Transactional;
 
 @Service
-@Transactional
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userRepo;
@@ -36,6 +35,7 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserRoleRepository userRoleRepo;
 
+    @Transactional
     @Override
     public UserResponse createUser(UserRequest user) {
         User newUser = mapper.map(user, User.class);
@@ -68,10 +68,13 @@ public class UserServiceImpl implements UserService {
         currentUser.setPassword(user.getPassword());
         currentUser.setAddress(user.getAddress());
         currentUser.setUpdationDate(new Date());
-        Set<UserRole> roleList = currentUser.getUserRoles();
+        UserRole currUserRole = currentUser.getUserRoles().stream().findFirst().orElse(null);
+        currentUser.getUserRoles().remove(currUserRole);
+        userRoleRepo.delete(currUserRole);
         UserRole userRole = userRoleRepo.save(new UserRole(currentUser, role));
-        roleList.add(userRole);
-        currentUser.setUserRoles(roleList);
+        Set<UserRole> userRoleList = new HashSet<>();
+        userRoleList.add(userRole);
+        currentUser.setUserRoles(userRoleList);
         UserResponse userResponse = mapper.map(currentUser, UserResponse.class);
         currentUser.getUserRoles().stream().forEach((e) -> userResponse.setRole(e.getRole().getName()));
         return userResponse;
