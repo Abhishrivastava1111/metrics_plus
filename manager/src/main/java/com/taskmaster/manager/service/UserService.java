@@ -1,12 +1,11 @@
 package com.taskmaster.manager.service;
 
 import java.util.List;
-
+import com.taskmaster.manager.dto.AuthUser;
 import com.taskmaster.manager.dto.UserRequest;
 import com.taskmaster.manager.dto.UserResponse;
 
 public interface UserService {
-
     List<UserResponse> listOfUsers();
 
     UserResponse createUser(UserRequest user);
@@ -17,4 +16,5 @@ public interface UserService {
 
     UserResponse getUserById(Long id);
 
+    UserResponse userLogin(AuthUser userData);
 }

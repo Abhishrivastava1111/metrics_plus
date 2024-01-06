@@ -759,3 +759,263 @@ Caused by: java.lang.Error: Unresolved compilation problems:
 	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:197) ~[spring-beans-6.1.2.jar:6.1.2]
 	... 24 common frames omitted
 
+2024-01-06T15:32:51.475+05:30  INFO 261009 --- [restartedMain] c.taskmaster.manager.ManagerApplication  : Starting ManagerApplication using Java 17.0.9 with PID 261009 (/home/midbowser/Desktop/javaPractice/microservices/manager/target/classes started by midbowser in /home/midbowser/Desktop/javaPractice/microservices)
+2024-01-06T15:32:51.475+05:30  INFO 261009 --- [restartedMain] c.taskmaster.manager.ManagerApplication  : No active profile set, falling back to 1 default profile: "default"
+2024-01-06T15:32:51.556+05:30  INFO 261009 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-06T15:32:51.565+05:30  INFO 261009 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 7 JPA repository interfaces.
+2024-01-06T15:32:51.649+05:30  INFO 261009 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-01-06T15:32:51.650+05:30  INFO 261009 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-06T15:32:51.650+05:30  INFO 261009 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-06T15:32:51.669+05:30  INFO 261009 --- [restartedMain] o.a.c.c.C.[Tomcat-28].[localhost].[/]    : Initializing Spring embedded WebApplicationContext
+2024-01-06T15:32:51.669+05:30  INFO 261009 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 193 ms
+2024-01-06T15:32:51.686+05:30  INFO 261009 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-38 - Starting...
+2024-01-06T15:32:54.952+05:30  INFO 261009 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-38 - Added connection org.postgresql.jdbc.PgConnection@1fcbbea3
+2024-01-06T15:32:54.952+05:30  INFO 261009 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-38 - Start completed.
+2024-01-06T15:32:54.952+05:30  INFO 261009 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://dpg-cmbsthn109ks73af2uo0-a.oregon-postgres.render.com/metricsplus'
+2024-01-06T15:32:54.980+05:30  INFO 261009 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-06T15:33:10.805+05:30  INFO 261009 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-06T15:33:10.984+05:30 DEBUG 261009 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 22 mappings in 'requestMappingHandlerMapping'
+2024-01-06T15:33:11.007+05:30 DEBUG 261009 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-01-06T15:33:11.018+05:30 DEBUG 261009 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-01-06T15:33:11.022+05:30 DEBUG 261009 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-01-06T15:33:11.068+05:30  INFO 261009 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-01-06T15:33:11.075+05:30  INFO 261009 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-01-06T15:33:11.080+05:30  INFO 261009 --- [restartedMain] c.taskmaster.manager.ManagerApplication  : Started ManagerApplication in 19.635 seconds (process running for 7458.702)
+2024-01-06T15:33:11.082+05:30  INFO 261009 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-01-06T15:35:18.169+05:30  INFO 261009 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 1 deletion, 1 modification)
+2024-01-06T15:35:18.172+05:30  INFO 261009 --- [Thread-102] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-06T15:35:18.173+05:30  INFO 261009 --- [Thread-102] com.zaxxer.hikari.HikariDataSource       : HikariPool-38 - Shutdown initiated...
+2024-01-06T15:35:21.364+05:30  INFO 261009 --- [Thread-102] com.zaxxer.hikari.HikariDataSource       : HikariPool-38 - Shutdown completed.
+2024-01-06T15:35:21.479+05:30  INFO 261009 --- [restartedMain] c.taskmaster.manager.ManagerApplication  : Starting ManagerApplication using Java 17.0.9 with PID 261009 (/home/midbowser/Desktop/javaPractice/microservices/manager/target/classes started by midbowser in /home/midbowser/Desktop/javaPractice/microservices)
+2024-01-06T15:35:21.479+05:30  INFO 261009 --- [restartedMain] c.taskmaster.manager.ManagerApplication  : No active profile set, falling back to 1 default profile: "default"
+2024-01-06T15:35:21.551+05:30  INFO 261009 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-06T15:35:21.560+05:30  INFO 261009 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 7 JPA repository interfaces.
+2024-01-06T15:35:21.607+05:30  INFO 261009 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-01-06T15:35:21.607+05:30  INFO 261009 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-06T15:35:21.607+05:30  INFO 261009 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-06T15:35:21.614+05:30  INFO 261009 --- [restartedMain] o.a.c.c.C.[Tomcat-28].[localhost].[/]    : Initializing Spring embedded WebApplicationContext
+2024-01-06T15:35:21.614+05:30  INFO 261009 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 134 ms
+2024-01-06T15:35:21.627+05:30  INFO 261009 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-39 - Starting...
+2024-01-06T15:35:24.842+05:30  INFO 261009 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-39 - Added connection org.postgresql.jdbc.PgConnection@1a699362
+2024-01-06T15:35:24.843+05:30  INFO 261009 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-39 - Start completed.
+2024-01-06T15:35:24.844+05:30  INFO 261009 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://dpg-cmbsthn109ks73af2uo0-a.oregon-postgres.render.com/metricsplus'
+2024-01-06T15:35:24.882+05:30  INFO 261009 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-06T15:35:39.822+05:30  INFO 261009 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-06T15:35:39.906+05:30  WARN 261009 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService': No qualifying bean of type 'com.taskmaster.manager.service.UserService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2024-01-06T15:35:39.906+05:30  INFO 261009 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-06T15:35:39.907+05:30  INFO 261009 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-39 - Shutdown initiated...
+2024-01-06T15:35:42.315+05:30  INFO 261009 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-39 - Shutdown completed.
+2024-01-06T15:35:42.316+05:30  INFO 261009 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-01-06T15:35:42.329+05:30  INFO 261009 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-01-06T15:35:42.349+05:30 ERROR 261009 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field userService in com.taskmaster.manager.controller.UserController required a bean of type 'com.taskmaster.manager.service.UserService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.taskmaster.manager.service.UserService' in your configuration.
+
+2024-01-06T15:36:51.135+05:30  INFO 261009 --- [restartedMain] c.taskmaster.manager.ManagerApplication  : Starting ManagerApplication using Java 17.0.9 with PID 261009 (/home/midbowser/Desktop/javaPractice/microservices/manager/target/classes started by midbowser in /home/midbowser/Desktop/javaPractice/microservices)
+2024-01-06T15:36:51.136+05:30  INFO 261009 --- [restartedMain] c.taskmaster.manager.ManagerApplication  : No active profile set, falling back to 1 default profile: "default"
+2024-01-06T15:36:51.226+05:30  INFO 261009 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-06T15:36:51.236+05:30  INFO 261009 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 7 JPA repository interfaces.
+2024-01-06T15:36:51.295+05:30  INFO 261009 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-01-06T15:36:51.296+05:30  INFO 261009 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-06T15:36:51.296+05:30  INFO 261009 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-06T15:36:51.304+05:30  INFO 261009 --- [restartedMain] o.a.c.c.C.[Tomcat-29].[localhost].[/]    : Initializing Spring embedded WebApplicationContext
+2024-01-06T15:36:51.304+05:30  INFO 261009 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 166 ms
+2024-01-06T15:36:51.315+05:30  INFO 261009 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-40 - Starting...
+2024-01-06T15:36:54.732+05:30  INFO 261009 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-40 - Added connection org.postgresql.jdbc.PgConnection@5150b202
+2024-01-06T15:36:54.733+05:30  INFO 261009 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-40 - Start completed.
+2024-01-06T15:36:54.733+05:30  INFO 261009 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://dpg-cmbsthn109ks73af2uo0-a.oregon-postgres.render.com/metricsplus'
+2024-01-06T15:36:54.759+05:30  INFO 261009 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-06T15:37:11.728+05:30  INFO 261009 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-06T15:37:11.874+05:30  WARN 261009 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService': Error creating bean with name 'userServiceImpl' defined in file [/home/midbowser/Desktop/javaPractice/microservices/manager/target/classes/com/taskmaster/manager/serviceImpl/UserServiceImpl.class]: Failed to instantiate [com.taskmaster.manager.serviceImpl.UserServiceImpl]: Constructor threw exception
+2024-01-06T15:37:11.874+05:30  INFO 261009 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-06T15:37:11.875+05:30  INFO 261009 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-40 - Shutdown initiated...
+2024-01-06T15:37:14.492+05:30  INFO 261009 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-40 - Shutdown completed.
+2024-01-06T15:37:14.493+05:30  INFO 261009 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-01-06T15:37:14.504+05:30  INFO 261009 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-01-06T15:37:14.510+05:30 ERROR 261009 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService': Error creating bean with name 'userServiceImpl' defined in file [/home/midbowser/Desktop/javaPractice/microservices/manager/target/classes/com/taskmaster/manager/serviceImpl/UserServiceImpl.class]: Failed to instantiate [com.taskmaster.manager.serviceImpl.UserServiceImpl]: Constructor threw exception
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:787) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:767) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:508) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1418) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:960) ~[spring-context-6.1.2.jar:6.1.2]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625) ~[spring-context-6.1.2.jar:6.1.2]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:464) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1358) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1347) ~[spring-boot-3.2.1.jar:3.2.1]
+	at com.taskmaster.manager.ManagerApplication.main(ManagerApplication.java:12) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.1.jar:3.2.1]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImpl' defined in file [/home/midbowser/Desktop/javaPractice/microservices/manager/target/classes/com/taskmaster/manager/serviceImpl/UserServiceImpl.class]: Failed to instantiate [com.taskmaster.manager.serviceImpl.UserServiceImpl]: Constructor threw exception
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1316) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1201) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:784) ~[spring-beans-6.1.2.jar:6.1.2]
+	... 25 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.taskmaster.manager.serviceImpl.UserServiceImpl]: Constructor threw exception
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:223) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:88) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1310) ~[spring-beans-6.1.2.jar:6.1.2]
+	... 36 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	The declared package "com.taskmaster.manager.service" does not match the expected package "com.taskmaster.manager.serviceImpl"
+	The method userLogin(AuthUser) of type UserServiceImpl must override or implement a supertype method
+	The method getEmail() is undefined for the type AuthUser
+	The method getPassword() is undefined for the type AuthUser
+
+	at com.taskmaster.manager.serviceImpl.UserServiceImpl.<init>(UserServiceImpl.java:1) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Unknown Source) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Unknown Source) ~[na:na]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:197) ~[spring-beans-6.1.2.jar:6.1.2]
+	... 38 common frames omitted
+
+2024-01-06T15:37:31.012+05:30  INFO 261009 --- [restartedMain] c.taskmaster.manager.ManagerApplication  : Starting ManagerApplication using Java 17.0.9 with PID 261009 (/home/midbowser/Desktop/javaPractice/microservices/manager/target/classes started by midbowser in /home/midbowser/Desktop/javaPractice/microservices)
+2024-01-06T15:37:31.012+05:30  INFO 261009 --- [restartedMain] c.taskmaster.manager.ManagerApplication  : No active profile set, falling back to 1 default profile: "default"
+2024-01-06T15:37:31.165+05:30  INFO 261009 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-06T15:37:31.183+05:30  INFO 261009 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 7 JPA repository interfaces.
+2024-01-06T15:37:31.257+05:30  INFO 261009 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-01-06T15:37:31.258+05:30  INFO 261009 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-06T15:37:31.258+05:30  INFO 261009 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-06T15:37:31.266+05:30  INFO 261009 --- [restartedMain] o.a.c.c.C.[Tomcat-30].[localhost].[/]    : Initializing Spring embedded WebApplicationContext
+2024-01-06T15:37:31.266+05:30  INFO 261009 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 252 ms
+2024-01-06T15:37:31.275+05:30  INFO 261009 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-41 - Starting...
+2024-01-06T15:37:35.073+05:30  INFO 261009 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-41 - Added connection org.postgresql.jdbc.PgConnection@3318b8b1
+2024-01-06T15:37:35.073+05:30  INFO 261009 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-41 - Start completed.
+2024-01-06T15:37:35.074+05:30  INFO 261009 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://dpg-cmbsthn109ks73af2uo0-a.oregon-postgres.render.com/metricsplus'
+2024-01-06T15:37:35.116+05:30  INFO 261009 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-06T15:37:51.248+05:30  INFO 261009 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-06T15:37:51.324+05:30  WARN 261009 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService': Error creating bean with name 'userServiceImpl' defined in file [/home/midbowser/Desktop/javaPractice/microservices/manager/target/classes/com/taskmaster/manager/serviceImpl/UserServiceImpl.class]: Failed to instantiate [com.taskmaster.manager.serviceImpl.UserServiceImpl]: Constructor threw exception
+2024-01-06T15:37:51.324+05:30  INFO 261009 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-06T15:37:51.325+05:30  INFO 261009 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-41 - Shutdown initiated...
+2024-01-06T15:37:53.563+05:30  INFO 261009 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-41 - Shutdown completed.
+2024-01-06T15:37:53.564+05:30  INFO 261009 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-01-06T15:37:53.574+05:30  INFO 261009 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-01-06T15:37:53.580+05:30 ERROR 261009 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService': Error creating bean with name 'userServiceImpl' defined in file [/home/midbowser/Desktop/javaPractice/microservices/manager/target/classes/com/taskmaster/manager/serviceImpl/UserServiceImpl.class]: Failed to instantiate [com.taskmaster.manager.serviceImpl.UserServiceImpl]: Constructor threw exception
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:787) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:767) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:508) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1418) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:960) ~[spring-context-6.1.2.jar:6.1.2]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625) ~[spring-context-6.1.2.jar:6.1.2]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:464) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1358) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1347) ~[spring-boot-3.2.1.jar:3.2.1]
+	at com.taskmaster.manager.ManagerApplication.main(ManagerApplication.java:12) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.1.jar:3.2.1]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImpl' defined in file [/home/midbowser/Desktop/javaPractice/microservices/manager/target/classes/com/taskmaster/manager/serviceImpl/UserServiceImpl.class]: Failed to instantiate [com.taskmaster.manager.serviceImpl.UserServiceImpl]: Constructor threw exception
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1316) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1201) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:784) ~[spring-beans-6.1.2.jar:6.1.2]
+	... 25 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.taskmaster.manager.serviceImpl.UserServiceImpl]: Constructor threw exception
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:223) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:88) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1310) ~[spring-beans-6.1.2.jar:6.1.2]
+	... 36 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problem: 
+	The declared package "com.taskmaster.manager.service" does not match the expected package "com.taskmaster.manager.serviceImpl"
+
+	at com.taskmaster.manager.serviceImpl.UserServiceImpl.<init>(UserServiceImpl.java:1) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Unknown Source) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Unknown Source) ~[na:na]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:197) ~[spring-beans-6.1.2.jar:6.1.2]
+	... 38 common frames omitted
+
+2024-01-06T15:37:56.013+05:30  INFO 261009 --- [restartedMain] c.taskmaster.manager.ManagerApplication  : Starting ManagerApplication using Java 17.0.9 with PID 261009 (/home/midbowser/Desktop/javaPractice/microservices/manager/target/classes started by midbowser in /home/midbowser/Desktop/javaPractice/microservices)
+2024-01-06T15:37:56.013+05:30  INFO 261009 --- [restartedMain] c.taskmaster.manager.ManagerApplication  : No active profile set, falling back to 1 default profile: "default"
+2024-01-06T15:37:56.099+05:30  INFO 261009 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-06T15:37:56.109+05:30  INFO 261009 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 7 JPA repository interfaces.
+2024-01-06T15:37:56.202+05:30  INFO 261009 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-01-06T15:37:56.202+05:30  INFO 261009 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-06T15:37:56.202+05:30  INFO 261009 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-06T15:37:56.214+05:30  INFO 261009 --- [restartedMain] o.a.c.c.C.[Tomcat-31].[localhost].[/]    : Initializing Spring embedded WebApplicationContext
+2024-01-06T15:37:56.214+05:30  INFO 261009 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 200 ms
+2024-01-06T15:37:56.226+05:30  INFO 261009 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-42 - Starting...
+2024-01-06T15:37:59.440+05:30  INFO 261009 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-42 - Added connection org.postgresql.jdbc.PgConnection@50fb16e8
+2024-01-06T15:37:59.440+05:30  INFO 261009 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-42 - Start completed.
+2024-01-06T15:37:59.441+05:30  INFO 261009 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://dpg-cmbsthn109ks73af2uo0-a.oregon-postgres.render.com/metricsplus'
+2024-01-06T15:37:59.479+05:30  INFO 261009 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-06T15:38:14.080+05:30  INFO 261009 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-06T15:38:14.243+05:30 DEBUG 261009 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 23 mappings in 'requestMappingHandlerMapping'
+2024-01-06T15:38:14.261+05:30 DEBUG 261009 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-01-06T15:38:14.265+05:30 DEBUG 261009 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-01-06T15:38:14.268+05:30 DEBUG 261009 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-01-06T15:38:14.288+05:30  INFO 261009 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-01-06T15:38:14.295+05:30  INFO 261009 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-01-06T15:38:14.299+05:30  INFO 261009 --- [restartedMain] c.taskmaster.manager.ManagerApplication  : Started ManagerApplication in 18.299 seconds (process running for 7761.922)
+2024-01-06T15:38:14.301+05:30  INFO 261009 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
