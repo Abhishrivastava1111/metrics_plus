@@ -39,7 +39,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserResponse createUser(UserRequest user) {
         User newUser = mapper.map(user, User.class);
-        Role role = roleRepo.findByName(user.getRole());
+        Role role = roleRepo.findByName(user.getRole().toUpperCase());
+        if (role == null) {
+            throw new UserNotFoundException("role is not as per the requirements");
+        }
         // todo check the null of role
         UserRole userRole = userRoleRepo.save(new UserRole(newUser, role));
         Set<UserRole> roleList = new HashSet<>();

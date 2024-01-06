@@ -72,4 +72,18 @@ public class WorklogServiceImpl implements WorklogService {
         }
     }
 
+    @Override
+    public ResponseEntity<String> deleteWorklog(Long id) {
+        Optional<Worklog> persistedLog = worklogRepository.findById(id);
+        if (!persistedLog.isPresent()) {
+            return ResponseEntity.status(400).body("worklog not found");
+        } else {
+            Worklog persistedWorklog = persistedLog.get();
+
+            worklogRepository.delete(persistedWorklog);
+
+            return ResponseEntity.ok("Deleted successfully");
+        }
+    }
+
 }

@@ -14,4 +14,6 @@ public interface WorklogService {
 
     ResponseEntity<String> editWorklog(WorklogDto entity, Long id);
 
+    ResponseEntity<String> deleteWorklog(Long id);
+
 }
