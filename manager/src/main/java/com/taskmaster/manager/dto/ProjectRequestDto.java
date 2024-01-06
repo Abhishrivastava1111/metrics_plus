@@ -27,4 +27,5 @@ public class ProjectRequestDto {
     @NotBlank(message = "Description is required")
     @Size(max = 1000, message = "Description cannot exceed 1000 characters")
     private String description;
+
 }

@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.taskmaster.manager.dto.ProjectRequestDto;
+import com.taskmaster.manager.dto.ProjectResponseDto;
 import com.taskmaster.manager.entity.Project;
 import com.taskmaster.manager.service.ProjectService;
 
@@ -18,14 +19,13 @@ public class ProjectController {
     private ProjectService projectService;
 
     @GetMapping
-    public List<Project> getAllProjects() {
+    public List<ProjectResponseDto> getAllProjects() {
         return projectService.getAllProjects();
     }
 
     @GetMapping("/{projectId}")
-    public ResponseEntity<Project> getProjectById(@PathVariable Long projectId) {
-        Optional<Project> project = projectService.getProjectById(projectId);
-        return project.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    public ResponseEntity<ProjectResponseDto> getProjectById(@PathVariable Long projectId) {
+        return ResponseEntity.ok(projectService.getProjectById(projectId));
     }
 
     @PostMapping("/")
@@ -38,14 +38,8 @@ public class ProjectController {
     @PutMapping("/{projectId}")
     public ResponseEntity<Project> updateProject(@PathVariable Long projectId,
             @RequestBody ProjectRequestDto projectRequestDto) {
-        Optional<Project> existingProject = projectService.getProjectById(projectId);
-        if (existingProject.isPresent()) {
-            Project updatedProject = new Project(); // You may use a mapper to convert DTO to entity
-            // set properties from projectDto to updatedProject
-            Project savedProject = projectService.updateProject(projectId, updatedProject);
-            return ResponseEntity.ok(savedProject);
-        }
-        return ResponseEntity.notFound().build();
+        return projectService.updateProject(projectId, projectRequestDto);
+
     }
 
     @DeleteMapping("/{projectId}")

@@ -25,9 +25,4 @@ public class TaskDto {
     @NotNull(message = "Project ID is required")
     private Long projectId;
 
-    // Additional fields if needed for editing or saving a task
-
-    // Getters and Setters
-
-    // Additional constructors if needed
 }

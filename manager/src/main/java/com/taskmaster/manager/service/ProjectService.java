@@ -6,16 +6,17 @@ import java.util.Optional;
 import org.springframework.http.ResponseEntity;
 
 import com.taskmaster.manager.dto.ProjectRequestDto;
+import com.taskmaster.manager.dto.ProjectResponseDto;
 import com.taskmaster.manager.entity.Project;
 
 public interface ProjectService {
-    List<Project> getAllProjects();
+    List<ProjectResponseDto> getAllProjects();
 
-    Optional<Project> getProjectById(Long projectId);
+    ProjectResponseDto getProjectById(Long projectId);
 
     ResponseEntity<Project> createProject(ProjectRequestDto projectRequestDto);
 
-    Project updateProject(Long projectId, Project updatedProject);
+    ResponseEntity<Project> updateProject(Long projectId, ProjectRequestDto updatedProject);
 
-    void deleteProject(Long projectId);
+    String deleteProject(Long projectId);
 }
