@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.http.ResponseEntity;
 
 import com.taskmaster.manager.dto.WorklogDto;
+import com.taskmaster.manager.dto.WorklogEditDto;
 
 public interface WorklogService {
 
@@ -12,8 +13,10 @@ public interface WorklogService {
 
     String addWorklog(WorklogDto worklogDto);
 
-    ResponseEntity<String> editWorklog(WorklogDto entity, Long id);
+    ResponseEntity<String> editWorklog(WorklogEditDto entity, Long id);
 
     ResponseEntity<String> deleteWorklog(Long id);
+
+    ResponseEntity<WorklogDto> getWorklogById(Long id);
 
 }

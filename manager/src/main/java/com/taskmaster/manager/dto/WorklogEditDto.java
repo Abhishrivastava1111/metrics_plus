@@ -10,9 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class WorklogDto {
-    // change if create any problem
-    private Long id;
+public class WorklogEditDto {
 
     @NotBlank(message = "Name is required")
     @Size(max = 100, message = "Name of Worklog cannot be longer than 100 characters")
@@ -22,10 +20,4 @@ public class WorklogDto {
     @Size(max = 500, message = "Description cannot be longer than 500 characters")
     private String description;
 
-    @NotEmpty
-    private Long projentId;
-    @NotEmpty
-    private Long userId;
-    @NotEmpty
-    private Long[] taskIds;
 }

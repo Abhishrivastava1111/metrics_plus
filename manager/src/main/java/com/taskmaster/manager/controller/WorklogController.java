@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.taskmaster.manager.dto.WorklogDto;
+import com.taskmaster.manager.dto.WorklogEditDto;
 import com.taskmaster.manager.service.WorklogService;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -29,6 +30,11 @@ public class WorklogController {
         return ResponseEntity.ok(worklogService.getAllWorklog());
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<WorklogDto> getWorklog(@PathVariable Long id) {
+        return worklogService.getWorklogById(id);
+    }
+
     @PostMapping("/")
     public ResponseEntity<String> addWorklog(@RequestBody WorklogDto worklogDto) {
 
@@ -36,7 +42,7 @@ public class WorklogController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<String> editWorklog(@PathVariable Long id, @RequestBody WorklogDto entity) {
+    public ResponseEntity<String> editWorklog(@PathVariable Long id, @RequestBody WorklogEditDto entity) {
 
         return worklogService.editWorklog(entity, id);
     }

@@ -10,7 +10,6 @@ import com.taskmaster.manager.entity.Project;
 import com.taskmaster.manager.service.ProjectService;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/projects")

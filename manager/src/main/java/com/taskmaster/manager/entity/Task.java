@@ -6,9 +6,20 @@ import org.hibernate.annotations.UpdateTimestamp;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
 import java.util.Date;
 
 @Entity
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class Task extends BaseEntity {
 
     @NotBlank(message = "Name is required")
@@ -22,7 +33,7 @@ public class Task extends BaseEntity {
     private String desc;
 
     @Column(name = "status")
-    private boolean status;
+    private boolean completed = false;
 
     @ManyToOne
     @JoinColumn(name = "project_id")
@@ -38,10 +49,10 @@ public class Task extends BaseEntity {
     @Column(name = "updation_date")
     private Date updationDate;
 
-    @OneToOne(mappedBy = "assignTo")
+    @OneToOne
     private User userAssignedBy;
 
-    @OneToOne(mappedBy = "assignBy")
+    @OneToOne
     private User userAssignedTo;
 
     @ManyToOne

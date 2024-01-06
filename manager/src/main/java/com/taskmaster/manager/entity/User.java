@@ -88,9 +88,4 @@ public class User extends BaseEntity {
     @OneToMany(mappedBy = "user")
     private Set<Report> reports;
 
-    @OneToOne
-    private Task assignTo;
-
-    @OneToOne
-    private Task assignBy;
 }

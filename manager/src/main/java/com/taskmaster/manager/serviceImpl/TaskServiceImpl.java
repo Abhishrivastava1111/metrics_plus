@@ -1,8 +1,8 @@
 package com.taskmaster.manager.serviceImpl;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +14,8 @@ import com.taskmaster.manager.entity.Task;
 import com.taskmaster.manager.repository.TaskRepository;
 import com.taskmaster.manager.service.TaskService;
 
+import jakarta.transaction.Transactional;
+
 @Service
 public class TaskServiceImpl implements TaskService {
 
@@ -24,50 +26,45 @@ public class TaskServiceImpl implements TaskService {
     private ModelMapper mapper;
 
     @Override
-    public List<TaskDto> getAllTasks() {
+    public ResponseEntity<List<TaskDto>> getAllTasks() {
         List<Task> allTasks = taskRepository.findAll();
-        List<TaskDto> list = new ArrayList<>();
-        for (Task task : allTasks) {
-            TaskDto mappedDto = mapper.map(task, TaskDto.class);
-            list.add(mappedDto);
-
-        }
-        return list;
+        List<TaskDto> taskDtos = allTasks.stream()
+                .map(task -> mapper.map(task, TaskDto.class))
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(taskDtos);
     }
 
     @Override
     public ResponseEntity<String> addNewTask(TaskDto entity) {
         Task mappedTask = mapper.map(entity, Task.class);
         Task persistedTask = taskRepository.save(mappedTask);
-        if (persistedTask != null) {
-            return ResponseEntity.ok("Saved Successfully");
-        }
-        return ResponseEntity.status(500).body("something went wrong");
-
+        return persistedTask != null ? ResponseEntity.ok("Saved Successfully")
+                : ResponseEntity.status(500).body("Something went wrong");
     }
 
     @Override
+    @Transactional
     public ResponseEntity<String> editTask(Long id, TaskDto dto) {
         Optional<Task> opTask = taskRepository.findById(id);
-        if (!opTask.isPresent())
-            return ResponseEntity.badRequest().body("Task does't exist");
-        else {
-            Task mappedTask = mapper.map(dto, Task.class);
+        if (!opTask.isPresent()) {
+            return ResponseEntity.badRequest().body("Task with ID " + id + " does not exist");
+        } else {
+            Task mappedTask = opTask.get();
+            mappedTask.setDesc(dto.getDesc());
+            mappedTask.setName(dto.getName());
             taskRepository.save(mappedTask);
-            return ResponseEntity.ok("edited successfully");
+            return ResponseEntity.ok("Edited successfully");
         }
-
     }
 
     @Override
+    @Transactional
     public ResponseEntity<String> deleteTask(Long id) {
         Optional<Task> opTask = taskRepository.findById(id);
         if (opTask.isPresent()) {
             taskRepository.delete(opTask.get());
             return ResponseEntity.ok("Deleted successfully");
-
         }
-        return ResponseEntity.status(500).body("something went wrong");
+        return ResponseEntity.status(500).body("Task with ID " + id + " not found");
     }
-
 }

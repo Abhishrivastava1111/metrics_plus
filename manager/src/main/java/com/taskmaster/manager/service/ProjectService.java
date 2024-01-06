@@ -1,7 +1,6 @@
 package com.taskmaster.manager.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.http.ResponseEntity;
 
@@ -10,6 +9,7 @@ import com.taskmaster.manager.dto.ProjectResponseDto;
 import com.taskmaster.manager.entity.Project;
 
 public interface ProjectService {
+
     List<ProjectResponseDto> getAllProjects();
 
     ProjectResponseDto getProjectById(Long projectId);

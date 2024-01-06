@@ -91,6 +91,7 @@ public class UserServiceImpl implements UserService {
         return userResponse;
     }
 
+    @Transactional
     @Override
     public UserResponse getUserById(Long id) {
         User currentUser = userRepo.findById(id)

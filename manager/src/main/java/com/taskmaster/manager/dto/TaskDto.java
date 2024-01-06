@@ -6,10 +6,14 @@ import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
+@Setter
+@ToString
 public class TaskDto {
 
     @NotBlank(message = "Name is required")
@@ -19,8 +23,6 @@ public class TaskDto {
     @NotBlank(message = "Description is required")
     @Size(max = 500, message = "Description cannot be longer than 500 characters")
     private String desc;
-
-    private boolean status;
 
     @NotNull(message = "Project ID is required")
     private Long projectId;

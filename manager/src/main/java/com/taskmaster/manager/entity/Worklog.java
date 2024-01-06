@@ -3,6 +3,9 @@ package com.taskmaster.manager.entity;
 import java.util.Date;
 import java.util.Set;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -35,10 +38,12 @@ public class Worklog extends BaseEntity {
     @Column(name = "worklog_description")
     private String description;
 
+    @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "creation_date", updatable = false)
     private Date creationDate;
 
+    @UpdateTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "updation_date")
     private Date updationDate;

@@ -8,7 +8,7 @@ import com.taskmaster.manager.dto.TaskDto;
 
 public interface TaskService {
 
-    List<TaskDto> getAllTasks();
+    ResponseEntity<List<TaskDto>> getAllTasks();
 
     ResponseEntity<String> addNewTask(TaskDto entity);
 
