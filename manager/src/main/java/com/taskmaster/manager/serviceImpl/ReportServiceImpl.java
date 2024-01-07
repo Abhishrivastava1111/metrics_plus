@@ -1,83 +1,64 @@
 package com.taskmaster.manager.serviceImpl;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.taskmaster.manager.dto.ReportRequestDto;
-import com.taskmaster.manager.entity.Report;
-import com.taskmaster.manager.repository.ReportRepository;
+import com.taskmaster.manager.dto.ProjectResponseDto;
+import com.taskmaster.manager.dto.UserResponse;
+import com.taskmaster.manager.dto.report.ProjectReportResponseDto;
+import com.taskmaster.manager.dto.report.ReportResponseDto;
+import com.taskmaster.manager.service.ProjectService;
 import com.taskmaster.manager.service.ReportService;
+import com.taskmaster.manager.service.TaskService;
+import com.taskmaster.manager.service.UserService;
+import com.taskmaster.manager.service.WorklogService;
 
 @Service
 public class ReportServiceImpl implements ReportService {
     @Autowired
-    private ReportRepository reportRepository;
-    @Autowired
     private ModelMapper modelMapper;
 
-    @Override
-    public List<ReportRequestDto> getAllReports() {
-        List<Report> reports = reportRepository.findAll();
-        return reports.stream()
-                .map(this::convertToDto)
-                .collect(Collectors.toList());
-    }
+    @Autowired
+    private TaskService taskService;
+
+    @Autowired
+    private ProjectService projectService;
+
+    @Autowired
+    private WorklogService worklogService;
+
+    @Autowired
+    private UserService userService;
 
     @Override
-    public ReportRequestDto getReportById(Long id) {
-        Optional<Report> optionalReport = reportRepository.findById(id);
-        return optionalReport.map(this::convertToDto).orElse(null);
-    }
+    public ResponseEntity<ReportResponseDto> getUserRelatedReport() {
+        List<UserResponse> listOfUsers = userService.listOfUsers();
 
-    public List<ReportRequestDto> getReportsForProject(Long projectId) {
-        List<Report> reports = reportRepository.findByProjectId(projectId);
-        return reports.stream()
-                .map(this::convertToDto)
+        List<UserResponse> collect = listOfUsers.stream().filter(l -> l.getStatus().equals("undeployed"))
                 .collect(Collectors.toList());
+
+        int undepCount = collect.size();
+        int depCount = (listOfUsers.size()) - undepCount;
+
+        return ResponseEntity.ok(new ReportResponseDto(undepCount, depCount));
+
     }
 
-    // @Override
-    // public Double calculateEfficiency(Long taskId) {
-    // TaskEntity task = taskRepository.findById(taskId).orElse(null);
-    // if (task != null) {
-    // int tasksCompleted = task.getTasksCompleted();
-    // int totalTasks = task.getTotalTasks();
-    // if (totalTasks == 0) {
-    // return 0.0; // To handle division by zero scenario
-    // }
-    // return ((double) tasksCompleted / totalTasks) * 100.0;
-    // }
-    // return 0.0; // Or throw an exception based on your error handling strategy
-    // }
-    private ReportRequestDto convertToDto(Report report) {
-        return modelMapper.map(report, ReportRequestDto.class);
+    @Override
+    public ResponseEntity<ProjectReportResponseDto> getProjectReport() {
+
+        List<ProjectResponseDto> allProjects = projectService.getAllProjects();
+        List<ProjectResponseDto> completedPorjects = allProjects.stream().filter(p -> p.isCompleted())
+                .collect(Collectors.toList());
+
+        return ResponseEntity.ok(
+                new ProjectReportResponseDto(completedPorjects.size(), allProjects.size() - completedPorjects.size()));
     }
-    // @Override
-    // public ReportDTO createReport(ReportDTO reportDTO) {
-    // Report report = convertToEntity(reportDTO);
-    // Report savedReport = reportRepository.save(report);
-    // return convertToDto(savedReport);
-    // }
-    // @Override
-    // public ReportDTO updateReport(Long id, ReportDTO reportDTO) {
-    // Optional<Report> optionalReport = reportRepository.findById(id);
-    // if (optionalReport.isPresent()) {
-    // Report report = optionalReport.get();
-    // // Update fields as needed
-    // report.setStartDate(reportDTO.getStartDate());
-    // report.setEndDate(reportDTO.getEndDate());
-    // // ... update other fields
-    // Report updatedReport = reportRepository.save(report);
-    // return convertToDto(updatedReport);
-    // }
-    // return null;
-    // }
-    // @Override
-    // public void deleteReport(Long id) {
-    // reportRepository.deleteById(id);
-    // }
+
 }

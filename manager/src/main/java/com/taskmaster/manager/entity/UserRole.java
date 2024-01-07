@@ -16,7 +16,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class UserRole extends BaseEntity {
-    @JsonManagedReference
+    @JsonManagedReference // if something goes wrong then check it
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;

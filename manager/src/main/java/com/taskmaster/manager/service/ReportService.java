@@ -1,13 +1,13 @@
 package com.taskmaster.manager.service;
 
-import java.util.List;
+import org.springframework.http.ResponseEntity;
 
-import com.taskmaster.manager.dto.ReportRequestDto;
+import com.taskmaster.manager.dto.report.ProjectReportResponseDto;
+import com.taskmaster.manager.dto.report.ReportResponseDto;
 
 public interface ReportService {
-    List<ReportRequestDto> getAllReports();
 
-    ReportRequestDto getReportById(Long id);
+    ResponseEntity<ReportResponseDto> getUserRelatedReport();
 
-    List<ReportRequestDto> getReportsForProject(Long projectId);
+    ResponseEntity<ProjectReportResponseDto> getProjectReport();
 }

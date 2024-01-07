@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -37,11 +38,12 @@ public class Project extends BaseEntity {
     @Column(nullable = false, length = 1000)
     private String description;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "project")
     private Set<Worklog> worklogs;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "project")
+    @OneToMany(mappedBy = "project", fetch = FetchType.EAGER)
     private Set<UserProject> userProjects;
 
     @Column(name = "status")

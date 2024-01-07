@@ -73,7 +73,7 @@ public class User extends BaseEntity {
     @Column(name = "status")
     private String status = "undeployed";
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private Set<UserRole> userRoles;
 
     @OneToMany(mappedBy = "user")

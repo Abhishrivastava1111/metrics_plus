@@ -1,6 +1,5 @@
-package com.taskmaster.manager.dto;
+package com.taskmaster.manager.dto.report;
 
-import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,8 +9,8 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ReportResponseDto {
-    private Long id;
-    private Date startDate;
-    private Date endDate;
+public class ProjectReportResponseDto {
+
+    private int completionCount;
+    private int unCompletionCount;
 }

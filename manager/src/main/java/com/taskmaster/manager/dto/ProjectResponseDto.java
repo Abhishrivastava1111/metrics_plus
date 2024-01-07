@@ -13,6 +13,7 @@ import lombok.Setter;
 @Getter
 public class ProjectResponseDto {
     private Long projectId;
+    private boolean completed;
     private String name;
     private Date startDate;
     private Date endDate;

@@ -91,11 +91,13 @@ public class ProjectServiceImpl implements ProjectService {
         Optional<User> foundUser = userRepository.findById(projectDto.getUserId());
 
         if (foundUser.isPresent()) {
+            User user = foundUser.get();
+            user.setStatus("Deployed");
             // Save the mapped project first
             mappedProject = projectRepository.save(mappedProject);
 
             // Create and save the UserProject
-            UserProject userProj = userProjectRepository.save(new UserProject(mappedProject, foundUser.get()));
+            UserProject userProj = userProjectRepository.save(new UserProject(mappedProject, user));
             Set<UserProject> projList = new HashSet<>();
             projList.add(userProj);
             mappedProject.setUserProjects(projList);
@@ -125,6 +127,16 @@ public class ProjectServiceImpl implements ProjectService {
             persistedProject.setEndDate(updatedProject.getEndDate());
             persistedProject.setStartDate(updatedProject.getStartDate());
             persistedProject.setName(updatedProject.getName());
+
+            for (Long id : updatedProject.getMembers()) {
+                User user = userRepository.findById(id)
+                        .orElseThrow(() -> new UserNotFoundException("User with this id does not exist"));
+                user.setStatus("Deployed");
+                user = userRepository.save(user);
+                UserProject userProject = new UserProject(persistedProject, user);
+                UserProject savedUserProject = userProjectRepository.save(userProject);
+                persistedProject.getUserProjects().add(savedUserProject);
+            }
             return ResponseEntity.ok(persistedProject);
         } else {
             throw new UserNotFoundException("No project found with this id");

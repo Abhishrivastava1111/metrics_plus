@@ -35,6 +35,7 @@ public class UserController {
         return ResponseEntity.ok(createdUser);
     }
 
+    @PreAuthorize("isAuthenticated()")
     @GetMapping("/{id}")
     public ResponseEntity<UserResponse> getUserById(@PathVariable Long id) {
         UserResponse user = userService.getUserById(id);
@@ -66,6 +67,7 @@ public class UserController {
         return userService.generateTokenFromRefreshToken(refreshToken);
     }
 
+    @PreAuthorize("isAuthenticated()")
     @GetMapping
     public ResponseEntity<List<UserResponse>> getUserList() {
         List<UserResponse> userList = userService.listOfUsers();
