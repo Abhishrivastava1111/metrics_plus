@@ -44,6 +44,7 @@ public class ProjectServiceImpl implements ProjectService {
         for (Project project : projectList) {
             ProjectResponseDto proj = new ProjectResponseDto();
             proj.setName(project.getName());
+            proj.setProjectId(project.getId());
             proj.setStartDate(project.getStartDate());
             proj.setEndDate(project.getStartDate());
             proj.setDescription(project.getDescription());
@@ -59,12 +60,14 @@ public class ProjectServiceImpl implements ProjectService {
         return projectListDto;
     }
 
+    @Transactional
     @Override
     public ProjectResponseDto getProjectById(Long projectId) {
         Project project = projectRepository.findById(projectId)
                 .orElseThrow(() -> new ProjectNotFoundException("Project not found"));
         ProjectResponseDto proj = new ProjectResponseDto();
         proj.setName(project.getName());
+        proj.setProjectId(projectId);
         proj.setStartDate(project.getStartDate());
         proj.setEndDate(project.getStartDate());
         proj.setDescription(project.getDescription());

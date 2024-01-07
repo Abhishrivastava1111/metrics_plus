@@ -9,20 +9,31 @@ import java.util.List;
 import java.util.Set;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import com.taskmaster.manager.dto.AuthUser;
+import com.taskmaster.manager.dto.RequestToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import com.taskmaster.manager.dto.TokenDto;
 import com.taskmaster.manager.dto.UserRequest;
 import com.taskmaster.manager.dto.UserResponse;
 import com.taskmaster.manager.entity.Role;
 import com.taskmaster.manager.entity.User;
 import com.taskmaster.manager.entity.UserRole;
 import com.taskmaster.manager.exception.UserNotFoundException;
+import com.taskmaster.manager.filter.JwtService;
 import com.taskmaster.manager.repository.RoleRepository;
 import com.taskmaster.manager.repository.UserRepository;
 import com.taskmaster.manager.repository.UserRoleRepository;
 import com.taskmaster.manager.service.UserService;
-
 import jakarta.transaction.Transactional;
+import jakarta.validation.Valid;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -34,11 +45,18 @@ public class UserServiceImpl implements UserService {
     private RoleRepository roleRepo;
     @Autowired
     private UserRoleRepository userRoleRepo;
+    @Autowired
+    private AuthenticationManager authenticationManager;
+    @Autowired
+    private JwtService jwtService;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Transactional
     @Override
     public UserResponse createUser(UserRequest user) {
         User newUser = mapper.map(user, User.class);
+        newUser.setPassword(passwordEncoder.encode(user.getPassword()));
         Role role = roleRepo.findByName(user.getRole().toUpperCase());
         if (role == null) {
             throw new UserNotFoundException("role is not as per the requirements");
@@ -91,7 +109,6 @@ public class UserServiceImpl implements UserService {
         return userResponse;
     }
 
-    @Transactional
     @Override
     public UserResponse getUserById(Long id) {
         User currentUser = userRepo.findById(id)
@@ -124,13 +141,35 @@ public class UserServiceImpl implements UserService {
 
     @Transactional
     @Override
-    public UserResponse userLogin(AuthUser userData) {
-        User currentUser = userRepo.findByEmailAndPassword(userData.getEmail(), userData.getPassword());
-        if (currentUser.isDisabled()) {
-            currentUser.setDisabled(false);
+    public ResponseEntity<TokenDto> userLogin(@Valid AuthUser dto) {
+        Authentication authentication = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(dto.getEmail(), dto.getPassword()));
+        if (authentication.isAuthenticated()) {
+            UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+            String accessToken = jwtService.generateToken(userDetails);
+            String refreshToken = jwtService.generateRefereshToken(userDetails);
+            TokenDto tokenDto = new TokenDto();
+            tokenDto.setAccessToken(accessToken);
+            tokenDto.setRefreshToken(refreshToken);
+            return ResponseEntity.ok(tokenDto);
+        } else {
+            return ResponseEntity.status(401).build();
         }
-        UserResponse userDetails = mapper.map(currentUser, UserResponse.class);
-        currentUser.getUserRoles().stream().forEach((e) -> userDetails.setRole(e.getRole().getName()));
-        return userDetails;
+    }
+
+    @Override
+    public ResponseEntity<String> generateTokenFromRefreshToken(RequestToken refreshToken) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication != null) {
+            String userDetails = (String) authentication.getPrincipal();
+            if (jwtService.isValidRefreshToken(refreshToken, userDetails)) {
+                String newAccessToken = jwtService.generateTokenbyBareEmail(userDetails);
+                return ResponseEntity.ok(newAccessToken);
+            } else {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid refresh token");
+            }
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("User is not  authenticated");
+        }
     }
 }

@@ -5,14 +5,11 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 import com.taskmaster.manager.dto.WorklogDto;
 import com.taskmaster.manager.dto.WorklogEditDto;
@@ -50,8 +47,8 @@ public class WorklogServiceImpl implements WorklogService {
     @Autowired
     private UserRepository userRepository;
 
-    @Autowired
-    private RestTemplate restTemplate;
+    // @Autowired
+    // private RestTemplate restTemplate;
 
     @Transactional
     @Override

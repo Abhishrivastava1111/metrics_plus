@@ -1,7 +1,10 @@
 package com.taskmaster.manager.service;
 
 import java.util.List;
+import org.springframework.http.ResponseEntity;
 import com.taskmaster.manager.dto.AuthUser;
+import com.taskmaster.manager.dto.RequestToken;
+import com.taskmaster.manager.dto.TokenDto;
 import com.taskmaster.manager.dto.UserRequest;
 import com.taskmaster.manager.dto.UserResponse;
 
@@ -16,5 +19,7 @@ public interface UserService {
 
     UserResponse getUserById(Long id);
 
-    UserResponse userLogin(AuthUser userData);
+    ResponseEntity<TokenDto> userLogin(AuthUser userData);
+
+    ResponseEntity<String> generateTokenFromRefreshToken(RequestToken refreshToken);
 }
